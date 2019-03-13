@@ -163,7 +163,7 @@
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://linh47.github.io/2019/03/12/博客是怎么从0到1的/">0</span>
+        <span><a href="https://linh47.github.io/2019/03/12/博客是怎么从0到1的/#isso-thread"></a></span>
     
 </span>
 
@@ -222,7 +222,7 @@ Hexo部分hexo的配置文件y
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://linh47.github.io/2019/03/12/hello-world/">0</span>
+        <span><a href="https://linh47.github.io/2019/03/12/hello-world/#isso-thread"></a></span>
     
 </span>
 
@@ -410,18 +410,20 @@ Quick
 
         
     
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: 'b2a592a5d7353aad4574',
+        clientSecret: '8bc3c82a7a51beb8aaf5a6fa2fcbddbf76f892ad',
+        id: '25fe144112286a0355af2c2d5b1a2ccb',
+        repo: 'linh47.github.io',
+        owner: 'linh47',
+        admin: "linh47"
+    })
+    gitalk.render('comment-container')
+</script>
+
 
 
 
