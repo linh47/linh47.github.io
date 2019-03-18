@@ -32,7 +32,7 @@
 <meta property="og:description" content="此文为自己总结的Java多线程相关的知识点，参考了多篇文章和《疯狂java讲义第四版》，加入了自己对概念的理解和疑问解答。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cyc2018.github.io/CS-Notes/pics/96706658-b3f8-4f32-8eb3-dcb7fc8d5381.jpg">
-<meta property="og:updated_time" content="2019-03-18T09:39:16.689Z">
+<meta property="og:updated_time" content="2019-03-18T10:30:16.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java并发编程（多线程）">
 <meta name="twitter:description" content="此文为自己总结的Java多线程相关的知识点，参考了多篇文章和《疯狂java讲义第四版》，加入了自己对概念的理解和疑问解答。">
@@ -249,7 +249,6 @@ ga('send', 'pageview');
 </ol>
 </li>
 <li><p>​        管理线程也要消耗资源（可以通过线程池缓解）</p>
-<p>#### </p>
 </li>
 </ol>
 <h3 id="三、线程的创建"><a href="#三、线程的创建" class="headerlink" title="三、线程的创建"></a>三、线程的创建</h3><ol>
@@ -264,12 +263,12 @@ ga('send', 'pageview');
 <p><strong><em>我的理解：所有的线程对象都必须是Thread类/其子类 的实例</em></strong></p>
 </li>
 </ol>
-<h2 id="创建线程的方式对比"><a href="#创建线程的方式对比" class="headerlink" title="创建线程的方式对比"></a>创建线程的方式对比</h2><p>   实现接口的优缺点</p>
+<h2 id="创建线程的方式对比"><a href="#创建线程的方式对比" class="headerlink" title="创建线程的方式对比"></a>创建线程的方式对比</h2><p>   <strong>实现接口的优缺点</strong></p>
 <ul>
 <li>Java 不支持多重继承，但是可以实现多个接口；线程类只是实现了接口的话，还可以继承其他类。</li>
 <li>多个线程可以共享一个target对象，适合多个相同线程处理同一份资源的情况</li>
 <li><p>编写程序会比较复杂，访问当前线程只能用Thread.currentThread()方法</p>
-<p>继承Thread类的优缺点</p>
+<p><strong>继承Thread类的优缺点</strong></p>
 </li>
 <li><p>不能再继承其他父类</p>
 </li>
@@ -320,32 +319,34 @@ ga('send', 'pageview');
 <p>线程获得了CPU，开始执行run()方法。</p>
 <p>单CPU，一个时刻只有一个线程处于运行状态。</p>
 <p>多CPU，多个线程<strong>并行</strong>执行。如果线程数比CPU数多，依然会存在线程在一个CPU上轮换的现象。</p>
-<p>线程不可能一直处于运行状态，除非它瞬间就执行结束了。线程需要被中断，让给其他线程执行。</p>
-<p>根据系统策略不同，调度细节也不同。</p>
-<p>抢占式策略的系统（桌面/服务器端系统），每个线程被分配固定的时间段，用完了资源就被剥夺，其他线程被执行。</p>
-<p>协作式调度策略的系统（手机系统），每个线程主动放弃所占用的资源，调用sleep()或者yield()方法。</p>
 </li>
+</ol>
+<p>   线程不可能一直处于运行状态，除非它瞬间就执行结束了。线程需要被中断，让给其他线程执行。</p>
+<p>   根据系统策略不同，调度细节也不同。</p>
+<p>   ​    ①抢占式策略的系统（桌面/服务器端系统），每个线程被分配固定的时间段，用完了资源就被剥夺，其他线程被执行。</p>
+<p>   ​    ②协作式调度策略的系统（手机系统），每个线程主动放弃所占用的资源，调用sleep()或者yield()方法。</p>
+<ol start="4">
 <li><p><strong>阻塞 blocked</strong></p>
-<p>发生如下情况，线程会进入阻塞状态：</p>
-<p>​    调用sleep()方法</p>
-<p>​    调用阻塞式IO方法，在方法返回前都处于阻塞状态</p>
-<p>​    线程试图获得一个同步监视器，但该监视器被其他线程所持有。</p>
-<p>​    线程在等待某个通知notify</p>
-<p>​    程序调用了suspend()方法将线程挂起（容易导致死锁，避免使用）</p>
+<p><strong>发生如下情况，线程会进入阻塞状态：</strong></p>
+<p>​    ①调用sleep()方法</p>
+<p>​    ②调用阻塞式IO方法，在方法返回前都处于阻塞状态</p>
+<p>​    ③线程试图获得一个同步监视器，但该监视器被其他线程所持有。</p>
+<p>​    ④线程在等待某个通知notify</p>
+<p>​    ⑤程序调用了suspend()方法将线程挂起（容易导致死锁，避免使用）</p>
 <p>阻塞的线程被解除后可以进入就绪状态，必须等待再次调度才能运行。</p>
-<p>解除阻塞状态：</p>
-<p>​    调用sleep()的线程经过了指定时间</p>
-<p>​    阻塞式IO方法已经返回</p>
-<p>​    线程已经获得了同步监视器</p>
-<p>​    线程在等待通知时，其他线程发出了通知</p>
-<p>​    处于挂起状态的线程被调用了resume()方法恢复</p>
+<p><strong>解除阻塞状态：</strong></p>
+<p>​    ①调用sleep()的线程经过了指定时间</p>
+<p>​    ②阻塞式IO方法已经返回</p>
+<p>​    ③线程已经获得了同步监视器</p>
+<p>​    ④线程在等待通知时，其他线程发出了通知</p>
+<p>​    ⑤处于挂起状态的线程被调用了resume()方法恢复</p>
 </li>
 <li><p><strong>死亡 dead</strong></p>
 <p>线程结束后就处于死亡状态</p>
-<p>结束的方式：</p>
-<p>​    run()或者call()方法执行完成</p>
-<p>​    线程抛出一个未捕获的exception或error</p>
-<p>​    直接调用线程的stop()方法（容易导致死锁，不建议使用）</p>
+<p><strong>结束的方式：</strong></p>
+<p>​    ①run()或者call()方法执行完成</p>
+<p>​    ②线程抛出一个未捕获的exception或error</p>
+<p>​    ③直接调用线程的stop()方法（容易导致死锁，不建议使用）</p>
 <p>注意，子线程不受主线程结束的影响，不会随着它结束。</p>
 <p>死亡的线程就不要再调用start()启动它了。否则会引发IllegalThreadStateException异常。</p>
 </li>
@@ -384,7 +385,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://linh47.github.io/2019/03/18/Java并发编程（多线程）/" data-id="cjte76sd6001w78uaz8qzrhv2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://linh47.github.io/2019/03/18/Java并发编程（多线程）/" data-id="cjte7k4s2001wdoua4c0ije6k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -463,7 +464,7 @@ ga('send', 'pageview');
         "dateModified": "2019-03-18",
         "url": "https://linh47.github.io/2019/03/18/Java并发编程（多线程）/",
         "description": "此文为自己总结的Java多线程相关的知识点，参考了多篇文章和《疯狂java讲义第四版》，加入了自己对概念的理解和疑问解答。"
-        "wordCount": 1245
+        "wordCount": 1265
     }
 </script>
 
