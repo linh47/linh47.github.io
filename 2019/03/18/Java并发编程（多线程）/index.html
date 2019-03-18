@@ -23,19 +23,19 @@
     
         <meta name="keywords" content="Java,Thread,多线程,进程,并发">
     
-    <meta name="description" content="Java并发编程（多线程）运行中的程序就是进程，进程内部可以包含多个线程（顺序执行流） 具体例子：打开QQ、浏览器，等于开了2个进程，然后QQ里的任务可以交给多个线程执行，浏览器也是。 一、并发与并行并发：​    同一时刻只有一条指令执行 并行：​    同一时刻有多条指令在不同的处理器上同时执行 二、线程与进程进程的概念和特征 进程（Process）是计算机中的程序关于某数据集合上的一次运行活">
+    <meta name="description" content="此文为自己总结的Java多线程相关的知识点，参考了多篇文章和《疯狂java讲义第四版》，加入了自己对概念的理解和疑问解答。">
 <meta name="keywords" content="Java,Thread,多线程,进程,并发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java并发编程（多线程）">
 <meta property="og:url" content="https://linh47.github.io/2019/03/18/Java并发编程（多线程）/index.html">
 <meta property="og:site_name" content="小哀的安眠岛">
-<meta property="og:description" content="Java并发编程（多线程）运行中的程序就是进程，进程内部可以包含多个线程（顺序执行流） 具体例子：打开QQ、浏览器，等于开了2个进程，然后QQ里的任务可以交给多个线程执行，浏览器也是。 一、并发与并行并发：​    同一时刻只有一条指令执行 并行：​    同一时刻有多条指令在不同的处理器上同时执行 二、线程与进程进程的概念和特征 进程（Process）是计算机中的程序关于某数据集合上的一次运行活">
+<meta property="og:description" content="此文为自己总结的Java多线程相关的知识点，参考了多篇文章和《疯狂java讲义第四版》，加入了自己对概念的理解和疑问解答。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cyc2018.github.io/CS-Notes/pics/96706658-b3f8-4f32-8eb3-dcb7fc8d5381.jpg">
-<meta property="og:updated_time" content="2019-03-18T09:28:32.539Z">
+<meta property="og:updated_time" content="2019-03-18T09:37:28.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java并发编程（多线程）">
-<meta name="twitter:description" content="Java并发编程（多线程）运行中的程序就是进程，进程内部可以包含多个线程（顺序执行流） 具体例子：打开QQ、浏览器，等于开了2个进程，然后QQ里的任务可以交给多个线程执行，浏览器也是。 一、并发与并行并发：​    同一时刻只有一条指令执行 并行：​    同一时刻有多条指令在不同的处理器上同时执行 二、线程与进程进程的概念和特征 进程（Process）是计算机中的程序关于某数据集合上的一次运行活">
+<meta name="twitter:description" content="此文为自己总结的Java多线程相关的知识点，参考了多篇文章和《疯狂java讲义第四版》，加入了自己对概念的理解和疑问解答。">
 <meta name="twitter:image" content="https://cyc2018.github.io/CS-Notes/pics/96706658-b3f8-4f32-8eb3-dcb7fc8d5381.jpg">
     
 
@@ -200,7 +200,8 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="Java并发编程（多线程）"><a href="#Java并发编程（多线程）" class="headerlink" title="Java并发编程（多线程）"></a>Java并发编程（多线程）</h1><p>运行中的程序就是进程，进程内部可以包含多个线程（顺序执行流）</p>
+            <p>此文为自己总结的Java多线程相关的知识点，参考了多篇文章和《疯狂java讲义第四版》，加入了自己对概念的理解和疑问解答。<br><a id="more"></a></p>
+<h1 id="Java并发编程（多线程）"><a href="#Java并发编程（多线程）" class="headerlink" title="Java并发编程（多线程）"></a>Java并发编程（多线程）</h1><p>运行中的程序就是进程，进程内部可以包含多个线程（顺序执行流）</p>
 <p>具体例子：打开QQ、浏览器，等于开了2个进程，然后QQ里的任务可以交给多个线程执行，浏览器也是。</p>
 <h3 id="一、并发与并行"><a href="#一、并发与并行" class="headerlink" title="一、并发与并行"></a>一、并发与并行</h3><h4 id="并发："><a href="#并发：" class="headerlink" title="并发："></a>并发：</h4><p>​    同一时刻只有一条指令执行</p>
 <h4 id="并行："><a href="#并行：" class="headerlink" title="并行："></a>并行：</h4><p>​    同一时刻有多条指令在不同的处理器上同时执行</p>
@@ -383,7 +384,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://linh47.github.io/2019/03/18/Java并发编程（多线程）/" data-id="cjte5h0bm001vmwua8nafh1rm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://linh47.github.io/2019/03/18/Java并发编程（多线程）/" data-id="cjte5oh7l001wkcuac181ozb6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -461,13 +462,8 @@ ga('send', 'pageview');
         "dateCreated": "2019-03-18",
         "dateModified": "2019-03-18",
         "url": "https://linh47.github.io/2019/03/18/Java并发编程（多线程）/",
-        "description": "Java并发编程（多线程）运行中的程序就是进程，进程内部可以包含多个线程（顺序执行流）
-具体例子：打开QQ、浏览器，等于开了2个进程，然后QQ里的任务可以交给多个线程执行，浏览器也是。
-一、并发与并行并发：​    同一时刻只有一条指令执行
-并行：​    同一时刻有多条指令在不同的处理器上同时执行
-二、线程与进程进程的概念和特征
-进程（Process）是计算机中的程序关于某数据集合上的一次运行活"
-        "wordCount": 1244
+        "description": "此文为自己总结的Java多线程相关的知识点，参考了多篇文章和《疯狂java讲义第四版》，加入了自己对概念的理解和疑问解答。"
+        "wordCount": 1245
     }
 </script>
 
