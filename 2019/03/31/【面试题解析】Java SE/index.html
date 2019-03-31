@@ -17,19 +17,24 @@
     
 
     
-    <title>categories | 小哀的安眠岛</title>
+    <title>【面试题解析】Java SE | 小哀的安眠岛</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://linh47.github.io/categories/index.html">
+        <meta name="keywords" content="-Java SE - 面试题">
+    
+    <meta name="description" content="1、重写equals()时为什么也得重写hashCode()？ 答案：  前置问题：为什么要重写equals方法？ 从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。 前置问题：hashCode()的作用？">
+<meta name="keywords" content="-Java SE - 面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【面试题解析】Java SE">
+<meta property="og:url" content="https://linh47.github.io/2019/03/31/【面试题解析】Java SE/index.html">
 <meta property="og:site_name" content="小哀的安眠岛">
+<meta property="og:description" content="1、重写equals()时为什么也得重写hashCode()？ 答案：  前置问题：为什么要重写equals方法？ 从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。 前置问题：hashCode()的作用？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T07:06:42.444Z">
+<meta property="og:updated_time" content="2019-03-31T08:11:44.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="【面试题解析】Java SE">
+<meta name="twitter:description" content="1、重写equals()时为什么也得重写hashCode()？ 答案：  前置问题：为什么要重写equals方法？ 从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。 前置问题：hashCode()的作用？">
     
 
     
@@ -154,35 +159,81 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="/categories/index.html">categories</em>
+    <a class="page-title-link" href="/categories/computer-science计算机技术/">computer science计算机技术</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/computer-science计算机技术/Java/">Java</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="page-" class="article article-single article-type-page" itemscope itemprop="blogPost">
+                            <article id="post-【面试题解析】Java SE" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        categories
+        【面试题解析】Java SE
         </h1>
     
 
             </header>
         
         
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/31/【面试题解析】Java SE/" class="article-date">
+            <time datetime="2019-03-31T08:01:53.000Z" itemprop="datePublished">2019-03-31</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java-SE-面试题/">-Java SE - 面试题</a>
+    </div>
+
+            </div>
+        
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><strong>1、重写equals()时为什么也得重写hashCode()？</strong></p>
+<p>答案：</p>
+<blockquote>
+<p>前置问题：为什么要重写equals方法？</p>
+<p>从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。</p>
+<p>前置问题：hashCode()的作用？</p>
+<p>Map接口的类会使用到键对象的哈希码。在java中，我们可以使用hashCode()来获取对象的哈希码，其值就是对象的存储地址，这个方法在Object类中声明，因此所有的子类都含有该方法。如果x与y是两个不同的对象，那么x.hashCode()与y.hashCode()基本是不会相同的。</p>
+</blockquote>
+<p><strong>Java规范：如果两个对象通过调用equals方法是相等的，那么这两个对象调用hashCode方法必须返回相同的整数。</strong></p>
+<p><strong>如果equals不相等，hashcode不一定需要不相同（可以相同，但是不建议）</strong></p>
+<blockquote>
+<p>1、如果两个对象equals，Java运行时环境会认为他们的hashcode一定相等。 </p>
+<p>2、如果两个对象不equals，他们的hashcode有可能相等。 </p>
+<p>3、如果两个对象hashcode相等，他们不一定equals。 </p>
+<p>4、如果两个对象hashcode不相等，他们一定不equals。 </p>
+</blockquote>
+<p>对于Map接口的实现类（比如hashmap)来说：</p>
+<p>他的hashCode()方法是继承自Object类的，对象调用hashCode()获得的是对象的内存地址，即使这两个对象的值是相同的，返回的hashCode()也是不相同的，即会出现equals()返回true，hashCode()返回false。</p>
+<p>所以为了判断两个hashmap中相同key对应的值是否相等，重写了equals的判断，也应该重载hashCode()方法。</p>
+<p>①先求key的hashCode()，比较他们的值是否相等</p>
+<p>②hashCode()相等，再比较equals()是否相等。（equals()比较的是对象是否相同)</p>
+<p>如果不重写hashCode()方法，hashmap在插入新元素的时候，如果新元素的key跟map里的一个key是一样的，两个key通过equals()方法比较返回true，hashCode()不重写的话他们得到的hashCode()却是不一样的，就会插入到不同的位置，从而hashmap会出现重复的key。</p>
+<blockquote>
+<p>重写hashCode()的原则</p>
+<p>​    （1）同一个对象多次调用hashCode()方法应该返回相同的值；</p>
+<p>​    （2）当两个对象通过equals()方法比较返回true时，这两个对象的hashCode()应该返回相等的（int）值；</p>
+<p>​    （3）对象中用作equals()方法比较标准的Filed(成员变量（类属性）)，都应该用来计算hashCode值。</p>
+</blockquote>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://linh47.github.io/categories/index.html" data-id="cjtwncr8e0000e8uaqr1l0a77" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://linh47.github.io/2019/03/31/【面试题解析】Java SE/" data-id="cjtwncra1000ce8uabmvhveps" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -252,16 +303,22 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Linh"
         },
-        "headline": "categories",
+        "headline": "【面试题解析】Java SE",
         "image": "https://linh47.github.io",
-        
-        
-        "datePublished": "2019-03-13",
-        "dateCreated": "2019-03-13",
-        "dateModified": "2019-03-13",
-        "url": "https://linh47.github.io/categories/index.html",
-        "description": ""
-        "wordCount": 6
+        "keywords": "-Java SE - 面试题",
+        "genre": "computer science计算机技术 Java",
+        "datePublished": "2019-03-31",
+        "dateCreated": "2019-03-31",
+        "dateModified": "2019-03-31",
+        "url": "https://linh47.github.io/2019/03/31/【面试题解析】Java SE/",
+        "description": "1、重写equals()时为什么也得重写hashCode()？
+答案：
+
+前置问题：为什么要重写equals方法？
+从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。
+前置问题：hashCode()的作用？
+"
+        "wordCount": 22
     }
 </script>
 
@@ -296,6 +353,29 @@ ga('send', 'pageview');
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/03/31/【面试题解析】Java 多线程/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            【面试题解析】Java 多线程
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/18/Java并发编程（多线程）/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Java并发编程（多线程）</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -530,7 +610,7 @@ ga('send', 'pageview');
     var gitalk = new Gitalk({
         clientID: 'b2a592a5d7353aad4574',
         clientSecret: '8bc3c82a7a51beb8aaf5a6fa2fcbddbf76f892ad',
-        id: 'b1ccbd874ee3fc58be7a7083354f9b8e',
+        id: 'e41f02dae3f6544dd73bd586a44180dd',
         repo: 'linh47.github.io',
         owner: 'linh47',
         admin: "linh47"

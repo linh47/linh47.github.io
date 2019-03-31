@@ -17,19 +17,24 @@
     
 
     
-    <title>categories | 小哀的安眠岛</title>
+    <title>【面试题解析】Java 多线程 | 小哀的安眠岛</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://linh47.github.io/categories/index.html">
+        <meta name="keywords" content="-Java SE - 面试题">
+    
+    <meta name="description" content="1、多线程中的i++线程安全吗？为什么？ 答案： 不安全， ①i++操作不是原子性的，它分为三步，读取i的值，对i的值加1，把结果赋值给i++，这三步中任意一步都可能被其他线程抢占。 ②把i设置成volatile也不能保证i++是原子性的，volatile只能保证可见性，即变量在读的时候是内存可见的，但是不能保证操作的原子性，即这几步操作其他线程不抢占。 ③可以通过使用concurrent包里的原">
+<meta name="keywords" content="-Java SE - 面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【面试题解析】Java 多线程">
+<meta property="og:url" content="https://linh47.github.io/2019/03/31/【面试题解析】Java 多线程/index.html">
 <meta property="og:site_name" content="小哀的安眠岛">
+<meta property="og:description" content="1、多线程中的i++线程安全吗？为什么？ 答案： 不安全， ①i++操作不是原子性的，它分为三步，读取i的值，对i的值加1，把结果赋值给i++，这三步中任意一步都可能被其他线程抢占。 ②把i设置成volatile也不能保证i++是原子性的，volatile只能保证可见性，即变量在读的时候是内存可见的，但是不能保证操作的原子性，即这几步操作其他线程不抢占。 ③可以通过使用concurrent包里的原">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T07:06:42.444Z">
+<meta property="og:updated_time" content="2019-03-31T08:12:14.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="【面试题解析】Java 多线程">
+<meta name="twitter:description" content="1、多线程中的i++线程安全吗？为什么？ 答案： 不安全， ①i++操作不是原子性的，它分为三步，读取i的值，对i的值加1，把结果赋值给i++，这三步中任意一步都可能被其他线程抢占。 ②把i设置成volatile也不能保证i++是原子性的，volatile只能保证可见性，即变量在读的时候是内存可见的，但是不能保证操作的原子性，即这几步操作其他线程不抢占。 ③可以通过使用concurrent包里的原">
     
 
     
@@ -154,35 +159,127 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="/categories/index.html">categories</em>
+    <a class="page-title-link" href="/categories/computer-science计算机技术/">computer science计算机技术</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/computer-science计算机技术/Java/">Java</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="page-" class="article article-single article-type-page" itemscope itemprop="blogPost">
+                            <article id="post-【面试题解析】Java 多线程" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        categories
+        【面试题解析】Java 多线程
         </h1>
     
 
             </header>
         
         
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/31/【面试题解析】Java 多线程/" class="article-date">
+            <time datetime="2019-03-31T08:03:34.000Z" itemprop="datePublished">2019-03-31</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java-SE-面试题/">-Java SE - 面试题</a>
+    </div>
+
+            </div>
+        
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><strong>1、多线程中的i++线程安全吗？为什么？</strong></p>
+<p>答案：</p>
+<p>不安全，</p>
+<p>①i++操作不是原子性的，它分为三步，读取i的值，对i的值加1，把结果赋值给i++，这三步中任意一步都可能被其他线程抢占。</p>
+<p>②把i设置成volatile也不能保证i++是原子性的，volatile只能保证可见性，即变量在读的时候是内存可见的，但是不能保证操作的原子性，即这几步操作其他线程不抢占。</p>
+<p>③可以通过使用concurrent包里的原子类来使i++变成线程安全的计数器，比如说int类型可以使用AtomicInteger类。因为这些类的底层是由Java的unsafe实现的，可以保证线程安全。</p>
+<p><strong>2、如何线程安全地实现一个计数器？</strong></p>
+<p>答案：</p>
+<p>①使用加锁，比如synchronized或者lock</p>
+<p>例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicCounter</span> </span>&#123;     </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> count = <span class="number">0</span>;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">    </span>&#123;        </span><br><span class="line">        count++; </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;        </span><br><span class="line">        <span class="keyword">return</span> count;  </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>②也可以使用concurrent包下的原子类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicCounter</span> </span>&#123;    </span><br><span class="line">    <span class="keyword">private</span> AtomicInteger count = <span class="keyword">new</span> AtomicInteger();   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">    </span>&#123;       </span><br><span class="line">        count.incrementAndGet();  </span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> count.get();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3、多线程同步的方法</strong></p>
+<p><strong>时间换空间</strong></p>
+<p>①synchronized：使用synchronized修饰的方法或者代码块可以看成是一个原子操作。</p>
+<p>方法：用this锁住整个方法内的代码块，如果是静态方法就锁了整个类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">output</span><span class="params">(String name)</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; name.length(); i++) </span><br><span class="line">	&#123;         </span><br><span class="line">	System.out.print(name.charAt(i));   </span><br><span class="line">	&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码块：共享对象作为锁，将需要互斥的代码包含起来</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;     </span><br><span class="line">	<span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123; </span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; name.length(); i++)</span><br><span class="line">		&#123;       </span><br><span class="line">        	System.out.print(name.charAt(i));          </span><br><span class="line">        &#125; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>synchronized关键字既保证了多线程的并发有序性，又保证了多线程的内存可见性。</p>
+<p>②lock（接口）</p>
+<p>使用ReentrantLock类（可重入、互斥、实现了Lock接口）</p>
+<p>可重入意为迭代的时候不会出现死锁。</p>
+<p>③volatile</p>
+<p>保证内存可见性，不保证操作原子性。</p>
+<p>要使 volatile 变量提供理想的线程安全，必须同时满足下面两个条件：</p>
+<p>​       1、对变量的写操作不依赖于当前值。</p>
+<p>​       2、该变量没有包含在具有其他变量的不变式中。</p>
+<p><strong>空间换时间</strong></p>
+<p>④ThreadLocal</p>
+<p>每个线程获得一个实例的副本，互不影响。线程持有一个Map，里面保存对象的映射。</p>
+<p>实际上不存在同步的问题，因为没有共享资源。</p>
+<p>另一种方法：</p>
+<p>⑤Semaphore信号量</p>
+<p>适用于多线程、多任务的场景，用信号量对资源进行访问控制，限制访问共享资源的线程数。使用信号量不会保证线程安全，因此，在访问的时候，要自己控制线程的安全访问。</p>
+<p>信号量提供了了一种很方便的方法来保证对共享变量的互斥访问，基本思想是</p>
+<p>将每个共享变量（或一组相关的共享变量）与一个信号量 s （初始化为1）联系起来，然后用 wait/signal 操作将相应的临界区包围起来。</p>
+<p>二元信号量也被称为互斥锁（mutex，mutual exclusve, 也称为 binary semaphore），wait 操作相当于加锁，signal 相当于解锁。</p>
+<p>Lock解决的问题：</p>
+<p>1）可以不让等待的线程一直无期限地等待下去 或者 能够响应中断；</p>
+<p>2）当多个线程都只是进行读操作时，线程之间不会发生冲突；</p>
+<p>3）得知线程有没有成功获取到锁。</p>
+<p>synchronized与lock区别</p>
+<p>​       (1) Lock是一个接口，是JDK层面的实现；而synchronized是Java中的关键字，是Java的内置特性，是JVM层面的实现； </p>
+<p>​       (2) synchronized 在发生异常时，会自动释放线程占有的锁，因此不会导致死锁现象发生；而Lock在发生异常时，如果没有主动通过unLock()去释放锁，则很可能造成死锁现象，因此使用Lock时需要在finally块中释放锁； </p>
+<p>​       (3) Lock 可以让等待锁的线程响应中断，而使用synchronized时，等待的线程会一直等待下去，不能够响应中断； </p>
+<p>​       (4) 通过Lock可以知道有没有成功获取锁，而synchronized却无法办到； </p>
+<p>​       (5) Lock可以提高多个线程进行读操作的效率。</p>
+<p> 在性能上来说，如果竞争资源不激烈，两者的性能是差不多的。</p>
+<p>而当竞争资源非常激烈时（即有大量线程同时竞争），此时Lock的性能要远远优于synchronized。</p>
+<p><strong>4、介绍一下生产者消费者模式？</strong></p>
+<p>答案：</p>
+<p>生产者消费者模式是一个多线程并发协作的模式。将线程分为两类，生产者和消费者，他们通过共享的内存缓冲区进行通信。生产者线程负责产生数据放到内存缓冲区里，消费者线程从内存缓冲区中取出数据。</p>
+<p>使用生产者消费者模式的好处：</p>
+<p>能够解耦生产者和消费者，他们彼此之间不直接依赖。生产者产生数据不需要依赖消费者的处理速度，消费者不能及时处理的又可以暂存在缓冲区。</p>
+<p>共享数据区域中应该具备这样的线程间并发协作的功能：</p>
+<ol>
+<li>如果共享数据区已满的话，阻塞生产者继续生产数据放置入内；</li>
+<li>如果共享数据区为空的话，阻塞消费者继续消费数据；</li>
+</ol>
+<p>实现这种模式有3种方法。</p>
+<p>①BlockingQueue阻塞队列</p>
+<p>阻塞队列完全可以充当共享数据区域</p>
+<p>②Object的wait/notify消息通知机制</p>
+<p>在Object提供的消息通知机制应该遵循如下这些条件：</p>
+<ol>
+<li>永远在while循环中对条件进行判断而不是if语句中进行wait条件的判断；</li>
+<li>使用NotifyAll而不是使用notify。</li>
+</ol>
+<p>③Lock中Condition的await/signal机制</p>
+<p>跟wait/notify差不多</p>
+<p>在使用线程的等待/通知机制时，一般都要在 while 循环中调用 wait()方法，因此配合使用一个 boolean 变量（或其他能判断真假的条件，如本文中的 list.isEmpty()），满足 while 循环的条件时，进入 while 循环，执行 wait()方法，不满足 while 循环的条件时，跳出循环，执行后面的代码。</p>
+<p><strong>5、创建线程有很大的开销，怎么优化？</strong></p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://linh47.github.io/categories/index.html" data-id="cjtwncr8e0000e8uaqr1l0a77" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://linh47.github.io/2019/03/31/【面试题解析】Java 多线程/" data-id="cjtwncra3000ee8uaetkv9dwl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -252,16 +349,21 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Linh"
         },
-        "headline": "categories",
+        "headline": "【面试题解析】Java 多线程",
         "image": "https://linh47.github.io",
-        
-        
-        "datePublished": "2019-03-13",
-        "dateCreated": "2019-03-13",
-        "dateModified": "2019-03-13",
-        "url": "https://linh47.github.io/categories/index.html",
-        "description": ""
-        "wordCount": 6
+        "keywords": "-Java SE - 面试题",
+        "genre": "computer science计算机技术 Java",
+        "datePublished": "2019-03-31",
+        "dateCreated": "2019-03-31",
+        "dateModified": "2019-03-31",
+        "url": "https://linh47.github.io/2019/03/31/【面试题解析】Java 多线程/",
+        "description": "1、多线程中的i++线程安全吗？为什么？
+答案：
+不安全，
+①i++操作不是原子性的，它分为三步，读取i的值，对i的值加1，把结果赋值给i++，这三步中任意一步都可能被其他线程抢占。
+②把i设置成volatile也不能保证i++是原子性的，volatile只能保证可见性，即变量在读的时候是内存可见的，但是不能保证操作的原子性，即这几步操作其他线程不抢占。
+③可以通过使用concurrent包里的原"
+        "wordCount": 494
     }
 </script>
 
@@ -296,6 +398,19 @@ ga('send', 'pageview');
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/03/31/【面试题解析】Java SE/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">【面试题解析】Java SE</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -530,7 +645,7 @@ ga('send', 'pageview');
     var gitalk = new Gitalk({
         clientID: 'b2a592a5d7353aad4574',
         clientSecret: '8bc3c82a7a51beb8aaf5a6fa2fcbddbf76f892ad',
-        id: 'b1ccbd874ee3fc58be7a7083354f9b8e',
+        id: '3677ad38967bc2d5958dbc110c85971f',
         repo: 'linh47.github.io',
         owner: 'linh47',
         admin: "linh47"

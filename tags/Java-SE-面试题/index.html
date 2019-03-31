@@ -17,19 +17,18 @@
     
 
     
-    <title>categories | 小哀的安眠岛</title>
+    <title>标签: -Java SE - 面试题 | 小哀的安眠岛</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="Java">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://linh47.github.io/categories/index.html">
+<meta property="og:title" content="小哀的安眠岛">
+<meta property="og:url" content="https://linh47.github.io/tags/Java-SE-面试题/index.html">
 <meta property="og:site_name" content="小哀的安眠岛">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T07:06:42.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="小哀的安眠岛">
     
 
     
@@ -154,127 +153,130 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="/categories/index.html">categories</em>
+    <i class="icon fa fa-tag"></i>标签: <em>-Java SE - 面试题</em>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="page-" class="article article-single article-type-page" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/31/【面试题解析】Java 多线程/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span><a href="https://linh47.github.io/2019/03/31/【面试题解析】Java 多线程/#isso-thread"></a></span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/computer-science计算机技术/">computer science计算机技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/computer-science计算机技术/Java/">Java</a>
+            </div>
+            <div class="date"><time datetime="2019-03-31T08:03:34.000Z" itemprop="datePublished">2019-03-31</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        categories
+        <a href="/2019/03/31/【面试题解析】Java 多线程/">【面试题解析】Java 多线程</a>
         </h1>
     
 
-            </header>
-        
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="https://linh47.github.io/categories/index.html" data-id="cjtwncr8e0000e8uaqr1l0a77" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        <p class="article-excerpt">
+            1、多线程中的i++线程安全吗？为什么？
+答案：
+不安全，
+①i++操作不是原子性的，它分为三步，读取i的值，对i的值加1，把结果赋值给i++，这三步中任意一步都可能被其他线程抢占。
+②把i设置成volatile也不能保证i++是原子性的，volatile只能保证可见性，即变量在读的时候是内存可见的，但是不能保证操作的原子性，即这几步操作其他线程不抢占。
+③可以通过使用concurrent包里的原
+        </p>
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "Linh"
-        },
-        "headline": "categories",
-        "image": "https://linh47.github.io",
-        
-        
-        "datePublished": "2019-03-13",
-        "dateCreated": "2019-03-13",
-        "dateModified": "2019-03-13",
-        "url": "https://linh47.github.io/categories/index.html",
-        "description": ""
-        "wordCount": 6
-    }
-</script>
-
 </article>
+    
 
-    <section id="comments">
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/31/【面试题解析】Java SE/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
     
         
-<div id="comment-container"></div>
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span><a href="https://linh47.github.io/2019/03/31/【面试题解析】Java SE/#isso-thread"></a></span>
+    
+</span>
 
 
     
-    </section>
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/computer-science计算机技术/">computer science计算机技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/computer-science计算机技术/Java/">Java</a>
+            </div>
+            <div class="date"><time datetime="2019-03-31T08:01:53.000Z" itemprop="datePublished">2019-03-31</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/31/【面试题解析】Java SE/">【面试题解析】Java SE</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            1、重写equals()时为什么也得重写hashCode()？
+答案：
+
+前置问题：为什么要重写equals方法？
+从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。
+前置问题：hashCode()的作用？
+
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+
+    </div></section>
 
 
 
@@ -530,7 +532,7 @@ ga('send', 'pageview');
     var gitalk = new Gitalk({
         clientID: 'b2a592a5d7353aad4574',
         clientSecret: '8bc3c82a7a51beb8aaf5a6fa2fcbddbf76f892ad',
-        id: 'b1ccbd874ee3fc58be7a7083354f9b8e',
+        id: 'ff285e5db917932a576de2fb234fceb7',
         repo: 'linh47.github.io',
         owner: 'linh47',
         admin: "linh47"
