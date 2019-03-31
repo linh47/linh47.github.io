@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="小哀的安眠岛">
 <meta property="og:description" content="1、重写equals()时为什么也得重写hashCode()？ 答案：  前置问题：为什么要重写equals方法？ 从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。 前置问题：hashCode()的作用？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-31T09:27:28.820Z">
+<meta property="og:updated_time" content="2019-03-31T09:28:42.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【面试题解析】Java SE">
 <meta name="twitter:description" content="1、重写equals()时为什么也得重写hashCode()？ 答案：  前置问题：为什么要重写equals方法？ 从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。 前置问题：hashCode()的作用？">
@@ -260,12 +260,12 @@ ga('send', 'pageview');
 <p>==是操作符。基本类型的变量只能用==方法来比较，比较的是对应类型的值是否相等。</p>
 <p>如果是两个对象比较，那么==比较的是对象的内存地址。</p>
 <p>（引用类型变量的默认equals()方法实际上还是调用了==来进行比较)</p>
-<p><strong>5、**</strong>若对一个类不重写它的equals()方法，equals()是如何比较的？**</p>
+<p><strong>5、若对一个类不重写它的equals()方法，equals()是如何比较的？</strong></p>
 <p>答案：</p>
 <p>如果类没有重写该方法，那么默认使用的就是 Object 类的方法，以下是 Object 类的 equals 方法：</p>
 <p>public boolean equals(Object obj) {       return (this == obj);   } </p>
 <p>实际上还是使用了==来比较对象的内存地址。</p>
-<p><strong>6、**</strong>java8新特性有哪些？**</p>
+<p><strong>6、java8新特性有哪些？</strong></p>
 <p>答案：</p>
 <p><strong>Lambda表达式、更好的类型推断、方法引用、默认方法、新的日期时间类、Stream、Optional类、并发、编译器和新工具。</strong></p>
 <ul>
@@ -340,7 +340,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://linh47.github.io/2019/03/31/【面试题解析】Java SE/" data-id="cjtwq1xws00207sua311ftq6n" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://linh47.github.io/2019/03/31/【面试题解析】Java SE/" data-id="cjtwq37su0021csuanp8pwkr8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
