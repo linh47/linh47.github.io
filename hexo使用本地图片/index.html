@@ -23,20 +23,20 @@
     
         <meta name="keywords" content>
     
-    <meta name="description" content="介绍在MD文档中插入本地图片的方法。">
+    <meta name="description" content="介绍在MD文档中插入图片的方法。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo使用本地图片">
 <meta property="og:url" content="https://linh47.github.io/hexo使用本地图片/index.html">
 <meta property="og:site_name" content="安眠岛">
-<meta property="og:description" content="介绍在MD文档中插入本地图片的方法。">
+<meta property="og:description" content="介绍在MD文档中插入图片的方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://linh47.github.io/hexo使用本地图片/wallhaven-509860.png">
-<meta property="og:updated_time" content="2019-03-18T09:34:30.961Z">
+<meta property="og:image" content="http://linh47blog.oss-cn-hangzhou.aliyuncs.com/it-images/wallhaven-509860.png">
+<meta property="og:updated_time" content="2019-04-15T13:51:36.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo使用本地图片">
-<meta name="twitter:description" content="介绍在MD文档中插入本地图片的方法。">
-<meta name="twitter:image" content="https://linh47.github.io/hexo使用本地图片/wallhaven-509860.png">
+<meta name="twitter:description" content="介绍在MD文档中插入图片的方法。">
+<meta name="twitter:image" content="http://linh47blog.oss-cn-hangzhou.aliyuncs.com/it-images/wallhaven-509860.png">
     
 
     
@@ -195,16 +195,17 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>介绍在MD文档中插入本地图片的方法。<br><a id="more"></a></p>
-<img src="/hexo使用本地图片/wallhaven-509860.png" title="壁纸示例">
-<img src="/hexo使用本地图片/wallhaven-567019.png" title="壁纸示例">
-<img src="/hexo使用本地图片/wallhaven-667141.png" title="壁纸示例">
-<img src="/hexo使用本地图片/wallhaven-681094.png" title="壁纸示例">
-<h4 id="1、hexo的配置文件"><a href="#1、hexo的配置文件" class="headerlink" title="1、hexo的配置文件"></a>1、hexo的配置文件</h4><p><code>post_asset_folder:true</code></p>
+            <p>介绍在MD文档中插入图片的方法。<br><a id="more"></a></p>
+<p><img src="http://linh47blog.oss-cn-hangzhou.aliyuncs.com/it-images/wallhaven-509860.png" alt="&quot;外链&quot;"></p>
+<p>1、hexo的配置文件</p>
+<p><code>post_asset_folder:true</code></p>
 <p>意思是每新建一个文档，就生成一个文件夹用来放对应的资源</p>
 <h4 id="2、下载插件"><a href="#2、下载插件" class="headerlink" title="2、下载插件"></a>2、下载插件</h4><p>在hexo的目录下执行<code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code></p>
 <h4 id="3、图片放在文档的文件夹下"><a href="#3、图片放在文档的文件夹下" class="headerlink" title="3、图片放在文档的文件夹下"></a>3、图片放在文档的文件夹下</h4><h4 id="4、在MD文档中引用本地图片"><a href="#4、在MD文档中引用本地图片" class="headerlink" title="4、在MD文档中引用本地图片"></a>4、在MD文档中引用本地图片</h4><p>其实使用的是hexo的标签</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img wallhaven-681094.png 壁纸示例%&#125;</span><br></pre></td></tr></table></figure>
+<p>更新：</p>
+<p>图片目前存在阿里云的对象存储OSS中，付费使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![&quot;图片描述&quot;](图片外链地址)</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -212,7 +213,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://linh47.github.io/hexo使用本地图片/" data-id="cjuic141j0007psuad2sslqlq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://linh47.github.io/hexo使用本地图片/" data-id="cjuifnhtf0003qsua8jf8yiek" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -283,15 +284,15 @@ ga('send', 'pageview');
             "name": "Linh"
         },
         "headline": "hexo使用本地图片",
-        "image": "https://linh47.github.io/hexo使用本地图片/wallhaven-509860.png",
+        "image": "https://linh47.github.iohttp://linh47blog.oss-cn-hangzhou.aliyuncs.com/it-images/wallhaven-509860.png",
         "keywords": "",
         "genre": "computer science计算机技术 blog set up博客搭建",
         "datePublished": "2019-03-13",
         "dateCreated": "2019-03-13",
-        "dateModified": "2019-03-18",
+        "dateModified": "2019-04-15",
         "url": "https://linh47.github.io/hexo使用本地图片/",
-        "description": "介绍在MD文档中插入本地图片的方法。"
-        "wordCount": 43
+        "description": "介绍在MD文档中插入图片的方法。"
+        "wordCount": 39
     }
 </script>
 
@@ -426,7 +427,7 @@ ga('send', 'pageview');
                             <a href="/hexo使用本地图片/" class="thumbnail">
     
     
-        <span style="background-image:url(/hexo使用本地图片/wallhaven-509860.png)" alt="hexo使用本地图片" class="thumbnail-image"></span>
+        <span style="background-image:url(http://linh47blog.oss-cn-hangzhou.aliyuncs.com/it-images/wallhaven-509860.png)" alt="hexo使用本地图片" class="thumbnail-image"></span>
     
     
 </a>
@@ -568,6 +569,8 @@ ga('send', 'pageview');
     
 
 
+			  <span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
 			  <span id="busuanzi_container_site_pv">本站总访问量为：<span id="busuanzi_value_site_pv"></span>次
 </span>
             </div>
