@@ -17,24 +17,24 @@
     
 
     
-    <title>给博客加上背景音乐吧 | 安眠岛</title>
+    <title>让谷歌检索到你的个人博客 | 安眠岛</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="BGM,网易云音乐">
+        <meta name="keywords" content="blog,Google,search engine">
     
-    <meta name="description" content="介绍在博客中加入网易云音乐播放器的方法。">
-<meta name="keywords" content="BGM,网易云音乐">
+    <meta name="description" content="介绍能够让搜索引擎收录你的个人博客并提供检索内容的方法。">
+<meta name="keywords" content="blog,Google,search engine">
 <meta property="og:type" content="article">
-<meta property="og:title" content="给博客加上背景音乐吧">
-<meta property="og:url" content="https://linh47.github.io/2019/03/14/给博客加上背景音乐吧/index.html">
+<meta property="og:title" content="让谷歌检索到你的个人博客">
+<meta property="og:url" content="https://linh47.github.io/让谷歌检索到你的个人博客/index.html">
 <meta property="og:site_name" content="安眠岛">
-<meta property="og:description" content="介绍在博客中加入网易云音乐播放器的方法。">
+<meta property="og:description" content="介绍能够让搜索引擎收录你的个人博客并提供检索内容的方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-18T09:35:19.881Z">
+<meta property="og:updated_time" content="2019-03-18T09:34:10.945Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="给博客加上背景音乐吧">
-<meta name="twitter:description" content="介绍在博客中加入网易云音乐播放器的方法。">
+<meta name="twitter:title" content="让谷歌检索到你的个人博客">
+<meta name="twitter:description" content="介绍能够让搜索引擎收录你的个人博客并提供检索内容的方法。">
     
 
     
@@ -73,8 +73,6 @@ ga('send', 'pageview');
     
 
 
-<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 </html>
 <body>
@@ -166,14 +164,14 @@ ga('send', 'pageview');
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-给博客加上背景音乐吧" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-让谷歌检索到你的个人博客" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        给博客加上背景音乐吧
+        让谷歌检索到你的个人博客
         </h1>
     
 
@@ -183,8 +181,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/03/14/给博客加上背景音乐吧/" class="article-date">
-            <time datetime="2019-03-13T17:05:23.000Z" itemprop="datePublished">2019-03-14</time>
+        <a href="/让谷歌检索到你的个人博客/" class="article-date">
+            <time datetime="2019-03-13T09:16:16.000Z" itemprop="datePublished">2019-03-13</time>
         </a>
     </div>
 
@@ -193,105 +191,40 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/BGM/">BGM</a>, <a class="tag-link" href="/tags/网易云音乐/">网易云音乐</a>
+        <a class="tag-link" href="/tags/Google/">Google</a>, <a class="tag-link" href="/tags/blog/">blog</a>, <a class="tag-link" href="/tags/search-engine/">search engine</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>介绍在博客中加入网易云音乐播放器的方法。<br><a id="more"></a><br> 我是一个很爱听随机歌的人，没有歌总觉得少了什么。</p>
-<p>于是给博客加上了播放器~~~</p>
-<p>查了一下，侧边栏是通过网易云的外链播放器iframe实现的，文章内则靠hexo的两个插件实现。</p>
-<h4 id="1、侧边栏播放器"><a href="#1、侧边栏播放器" class="headerlink" title="1、侧边栏播放器"></a>1、侧边栏播放器</h4><p>增加BGM栏，步骤跟其他的widget差不多</p>
-<h5 id="hueman的配置文件"><a href="#hueman的配置文件" class="headerlink" title="hueman的配置文件"></a>hueman的配置文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">widgets:</span><br><span class="line">- mymusic</span><br></pre></td></tr></table></figure>
-<h5 id="zh-CN加上翻译"><a href="#zh-CN加上翻译" class="headerlink" title="zh-CN加上翻译"></a>zh-CN加上翻译</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mymusic: &apos;背景音乐&apos;</span><br></pre></td></tr></table></figure>
-<h5 id="layout的widget里面加ejs文件"><a href="#layout的widget里面加ejs文件" class="headerlink" title="layout的widget里面加ejs文件"></a>layout的widget里面加ejs文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (site.tags.length) &#123; %&gt;</span><br><span class="line">    &lt;div class=&quot;widget-wrap widget-list&quot;&gt;</span><br><span class="line">        &lt;h3 class=&quot;widget-title&quot;&gt;&lt;%= __(&apos;BGM&apos;) %&gt;&lt;/h3&gt;</span><br><span class="line">        &lt;div class=&quot;widget&quot;&gt;</span><br><span class="line">        &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=300 height=450 src=&quot;//music.163.com/outchain/player?type=0&amp;id=884698131&amp;auto=1&amp;height=430&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<p> <strong>重点就是ejs文件里的<iframe>啦，这个生成非常简单。</iframe></strong></p>
-<p>打开网易云音乐的<u><strong>网页版</strong></u>，找到喜欢的单曲或者歌单，只要不收钱的不要版权的都可以<strong>导出外链播放器</strong>。</p>
-<p>选择iframe形式的，自己选个大小，稍微调一下就可以复制到自己的ejs文件里啦。</p>
-<p>我的大小是300宽，450高。auto=1是自动播放，0就是手动播放。</p>
-<p>有的能生成播放器的也未必播放得了，在网易云插件就可以试出来。</p>
-<h4 id="2、文章内播放器"><a href="#2、文章内播放器" class="headerlink" title="2、文章内播放器"></a>2、文章内播放器</h4><p>使用hexo的插件hexo-tag-aplayer</p>
-<p>​    安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure>
-<p>​    可以把音乐放到之前提到过的文章的资源文件夹里，有相对路径可以引用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer &quot;如常&quot; &quot;房东的猫&quot; &quot;房东的猫-如常.flac&quot; &quot;ruchang.jpg&quot; &quot;lrc:房东的猫-如常.lrc&quot; %&#125;</span><br></pre></td></tr></table></figure>
-
-        <div id="aplayer-hCaWXzbW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content">[00:00.00] 作曲 : 少年佩
-[00:01.00] 作词 : 一只然
-[00:11.10]制作人/编曲/弦乐编写 : 樊哲忠
-[00:13.24]监制 : 李纤橙
-[00:14.74]主唱/和声 : 红鼻子小黑
-[00:16.44]弦乐 : 国际首席爱乐团
-[00:17.93]打击乐 : 陳柏州
-[00:19.03]录音师 : 汝文博
-[00:20.23]录音室 : BIG J Studio Beijing
-[00:21.53]混音師 : 赵靖
-[00:31.90]很多时候你一个人习惯了
-[00:35.94]就无法给与嘱托
-[00:40.53]你习惯了如风般不结伴穿梭
-[00:46.37]影子都没留片刻
-[00:52.53]很多时候你一个人常常是
-[00:56.12]只考虑一个人的
-[01:00.91]你独舞喜怒哀乐任光阴如何
-[01:06.35]任光阴如何收割
-[01:13.23]你就是如此令人神往的角色
-[01:17.97]在造物主的手中不拘一格
-[01:23.41]锋利中带着柔和
-[01:27.90]柔和里伴随冷落
-[01:33.49]你就有如此不可多得的神色
-[01:37.83]你每种表情无需费力把我俘获
-[01:44.56]平静里带着谴责
-[01:47.90]谴责却没有愠火
-[02:10.45]很多时候你一个人厌倦了
-[02:14.39]序列有秩的生活
-[02:19.13]你厌倦同一班车被夕阳吞没
-[02:24.72]却怨的不动声色
-[02:34.15]很多时候你一个人就这么
-[02:38.69]跳入了一扇沉默
-[02:44.08]看起来属于陌生或属于暮色
-[02:49.66]却不是属于谁的
-[02:57.45]你就是如此令人神往的角色
-[03:01.14]在造物主的手中不拘一格
-[03:07.02]锋利中带着柔和
-[03:11.46]柔和里伴随冷落
-[03:17.25]你就有如此不可多得的神色
-[03:21.39]你每种表情无需费力把我俘获
-[03:28.08]平静里带着谴责
-[03:31.17]谴责却没有愠火
-[04:17.40]你就是如此令人神往的角色
-[04:22.44]在造物主的手中不拘一格
-[04:27.88]锋利中带着柔和
-[04:32.32]柔和里伴随冷落
-[04:37.80]你就有如此不可多得的神色
-[04:42.39]你每种表情无需费力把我俘获
-[04:48.73]平静里带着谴责
-[04:52.07]谴责却没有愠火
-[04:58.26]你告别该有的脆弱
-[05:03.15]你放生无罪的困惑
-[05:08.19]你沿着真心一路上
-[05:11.78]化作未染的清澈</pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-hCaWXzbW"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 2,
-            music: {
-              title: "如常",
-              author: "房东的猫",
-              url: "房东的猫-如常.flac",
-              pic: "/2019/03/14/给博客加上背景音乐吧/ruchang.jpg",
-              lrc: "房东的猫-如常.lrc"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-<p>《如常》我是买了的啦~~~强烈安利房东的猫，虽然现在已经不算小众了哈哈哈。听现场唱歌好舒服啊啊啊~两个妹子都是干干净净非常美好。</p>
+            <p>介绍能够让搜索引擎收录你的个人博客并提供检索内容的方法。<br><a id="more"></a><br>刚搭建完博客能够访问的时候，我以为随便百度谷歌都能搜到我写的东西了，屁颠屁颠搜了下，一点相关的都没有，然后看了教程才知道，想让自己的网站被检索，还需要上谷歌填写资料。</p>
+<p>检查是否被收录的方法：</p>
+<p>方法：打开百度或谷歌搜索，在搜索框里输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:你的博客地址</span><br></pre></td></tr></table></figure>
+<p>如果显示</p>
+<h3 id="尝试使用-Google-Search-Console"><a href="#尝试使用-Google-Search-Console" class="headerlink" title="尝试使用 Google Search Console"></a><a href="https://www.google.com/webmasters/tools/home#utm_source=zh-CN-wmxmsg&amp;utm_medium=wmxmsg&amp;utm_campaign=bm&amp;authuser=0" target="_blank" rel="noopener">尝试使用 Google Search Console</a></h3><p><a href="http://www.google.com/webmasters/" target="_blank" rel="noopener">www.google.com/webmasters/</a></p>
+<p>您对 linh47.github.io 是否具有所有权？请从 Google 获取索引和排名数据。</p>
+<p>就是还不能被搜索引擎检索到呢。</p>
+<p>那么记录一下怎样让谷歌检索到自己个人博客的方法吧！</p>
+<h4 id="1、生成自己网站的站点地图"><a href="#1、生成自己网站的站点地图" class="headerlink" title="1、生成自己网站的站点地图"></a>1、生成自己网站的站点地图</h4><p>这个站点地图很多地方都要用到，值得一做。</p>
+<p>先安装自动生成插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>在hexo的配置文件中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 自动生成sitemap</span><br><span class="line">sitemap: </span><br><span class="line">  path: sitemap.xml</span><br><span class="line">baidusitemap:</span><br><span class="line">  path: baidusitemap.xml</span><br></pre></td></tr></table></figure>
+<p>配置好了以后执行一下 hexo g，就能在博客文件\public目录下找到中生成的sitemap.xml和baidusitemap.xml了。</p>
+<h4 id="2、提交网站信息，设置html的meta标记"><a href="#2、提交网站信息，设置html的meta标记" class="headerlink" title="2、提交网站信息，设置html的meta标记"></a>2、提交网站信息，设置html的meta标记</h4><p>你想让谷歌检索你的博客，首先要证明这个网站你有所有权，也就是你可以更改网站的内容。</p>
+<p>有几种验证方法，由于hexo经常会把生成的静态文件clean掉，所以我们用在主题的头文件中添加html的meta标记的方法，一劳永逸。</p>
+<p><a href="https://www.google.com/webmasters/" target="_blank" rel="noopener">https://www.google.com/webmasters/</a></p>
+<p><a href="https://ziyuan.baidu.com/site" target="_blank" rel="noopener">https://ziyuan.baidu.com/site</a></p>
+<p>先跟着网址指引一步步填写信息。</p>
+<p>然后复制网址提供给你验证的meta</p>
+<p>html的meta放在hueman里面的head.ejs文件里面哦。</p>
+<p><head><meta name="generator" content="Hexo 3.8.0">  <meta xxxxx></head></p>
+<p>填好以后要先重新部署才能进行验证。</p>
+<h4 id="3、验证所有权后就可以提交站点地图"><a href="#3、验证所有权后就可以提交站点地图" class="headerlink" title="3、验证所有权后就可以提交站点地图"></a>3、验证所有权后就可以提交站点地图</h4><p>站点地图的意义在于搜索引擎能够更好地抓取网站的内容。</p>
+<p>根据对应搜索引擎的提示，谷歌提交sitemap.xml，百度提交baidusitemap.xml就可以了。</p>
+<h4 id="4、检索生效期"><a href="#4、检索生效期" class="headerlink" title="4、检索生效期"></a>4、检索生效期</h4><p>都设置好了以后并不能马上就搜到自己的博客内容，因为要等搜索引擎更新他的索引。</p>
 
         </div>
         <footer class="article-footer">
@@ -299,7 +232,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://linh47.github.io/2019/03/14/给博客加上背景音乐吧/" data-id="cjuh9ycen000bmcuau17yzqk2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://linh47.github.io/让谷歌检索到你的个人博客/" data-id="cjuic141g0006psua4rtk8m4j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -369,16 +302,16 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Linh"
         },
-        "headline": "给博客加上背景音乐吧",
+        "headline": "让谷歌检索到你的个人博客",
         "image": "https://linh47.github.io",
-        "keywords": "BGM 网易云音乐",
+        "keywords": "blog Google search engine",
         "genre": "computer science计算机技术 blog set up博客搭建",
-        "datePublished": "2019-03-14",
-        "dateCreated": "2019-03-14",
+        "datePublished": "2019-03-13",
+        "dateCreated": "2019-03-13",
         "dateModified": "2019-03-18",
-        "url": "https://linh47.github.io/2019/03/14/给博客加上背景音乐吧/",
-        "description": "介绍在博客中加入网易云音乐播放器的方法。"
-        "wordCount": 421
+        "url": "https://linh47.github.io/让谷歌检索到你的个人博客/",
+        "description": "介绍能够让搜索引擎收录你的个人博客并提供检索内容的方法。"
+        "wordCount": 99
     }
 </script>
 
@@ -417,20 +350,20 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2019/03/17/论文笔记-LPAwb+和DIRTLPAwb+/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/12/教你一天搭建一个免费的个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            论文笔记-LPAwb+和DIRTLPAwb+
+            教你一天搭建一个免费的个人博客
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2019/03/13/hexo使用本地图片/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/博客评论插件gitalk/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">hexo使用本地图片</p>
+        <p class="article-nav-title">在hueman上应用博客评论插件gitalk</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -470,10 +403,10 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/03/17/论文笔记-LPAwb+和DIRTLPAwb+/" class="thumbnail">
+                            <a href="/论文笔记-LPAwb+和DIRTLPAwb+/" class="thumbnail">
     
     
-        <span style="background-image:url(/2019/03/17/论文笔记-LPAwb+和DIRTLPAwb+/barbersmodularity.png)" alt="论文笔记-LPAwb+和DIRTLPAwb+" class="thumbnail-image"></span>
+        <span style="background-image:url(/论文笔记-LPAwb+和DIRTLPAwb+/barbersmodularity.png)" alt="论文笔记-LPAwb+和DIRTLPAwb+" class="thumbnail-image"></span>
     
     
 </a>
@@ -482,7 +415,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/搞学术/">搞学术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/搞学术/复杂网络-社区发现/">复杂网络-社区发现</a></p>
-                            <p class="item-title"><a href="/2019/03/17/论文笔记-LPAwb+和DIRTLPAwb+/" class="title">论文笔记-LPAwb+和DIRTLPAwb+</a></p>
+                            <p class="item-title"><a href="/论文笔记-LPAwb+和DIRTLPAwb+/" class="title">论文笔记-LPAwb+和DIRTLPAwb+</a></p>
                             <p class="item-date"><time datetime="2019-03-17T13:43:56.454Z" itemprop="datePublished">2019-03-17</time></p>
                         </div>
                     </li>
@@ -490,7 +423,7 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/03/14/给博客加上背景音乐吧/" class="thumbnail">
+                            <a href="/给博客加上背景音乐吧/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -502,7 +435,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/computer-science计算机技术/">computer science计算机技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/computer-science计算机技术/blog-set-up博客搭建/">blog set up博客搭建</a></p>
-                            <p class="item-title"><a href="/2019/03/14/给博客加上背景音乐吧/" class="title">给博客加上背景音乐吧</a></p>
+                            <p class="item-title"><a href="/给博客加上背景音乐吧/" class="title">给博客加上背景音乐吧</a></p>
                             <p class="item-date"><time datetime="2019-03-13T17:05:23.000Z" itemprop="datePublished">2019-03-14</time></p>
                         </div>
                     </li>
@@ -510,10 +443,10 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/03/13/hexo使用本地图片/" class="thumbnail">
+                            <a href="/hexo使用本地图片/" class="thumbnail">
     
     
-        <span style="background-image:url(/2019/03/13/hexo使用本地图片/wallhaven-509860.png)" alt="hexo使用本地图片" class="thumbnail-image"></span>
+        <span style="background-image:url(/hexo使用本地图片/wallhaven-509860.png)" alt="hexo使用本地图片" class="thumbnail-image"></span>
     
     
 </a>
@@ -522,7 +455,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/computer-science计算机技术/">computer science计算机技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/computer-science计算机技术/blog-set-up博客搭建/">blog set up博客搭建</a></p>
-                            <p class="item-title"><a href="/2019/03/13/hexo使用本地图片/" class="title">hexo使用本地图片</a></p>
+                            <p class="item-title"><a href="/hexo使用本地图片/" class="title">hexo使用本地图片</a></p>
                             <p class="item-date"><time datetime="2019-03-13T14:25:30.000Z" itemprop="datePublished">2019-03-13</time></p>
                         </div>
                     </li>
@@ -530,7 +463,7 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/03/13/教你一天搭建一个免费的个人博客/" class="thumbnail">
+                            <a href="/12/教你一天搭建一个免费的个人博客/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -542,7 +475,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/computer-science计算机技术/">computer science计算机技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/computer-science计算机技术/blog-set-up博客搭建/">blog set up博客搭建</a></p>
-                            <p class="item-title"><a href="/2019/03/13/教你一天搭建一个免费的个人博客/" class="title">教你一天搭建一个免费的个人博客</a></p>
+                            <p class="item-title"><a href="/12/教你一天搭建一个免费的个人博客/" class="title">教你一天搭建一个免费的个人博客</a></p>
                             <p class="item-date"><time datetime="2019-03-13T09:40:11.871Z" itemprop="datePublished">2019-03-13</time></p>
                         </div>
                     </li>
@@ -550,7 +483,7 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/03/13/让谷歌检索到你的个人博客/" class="thumbnail">
+                            <a href="/让谷歌检索到你的个人博客/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -562,7 +495,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/computer-science计算机技术/">computer science计算机技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/computer-science计算机技术/blog-set-up博客搭建/">blog set up博客搭建</a></p>
-                            <p class="item-title"><a href="/2019/03/13/让谷歌检索到你的个人博客/" class="title">让谷歌检索到你的个人博客</a></p>
+                            <p class="item-title"><a href="/让谷歌检索到你的个人博客/" class="title">让谷歌检索到你的个人博客</a></p>
                             <p class="item-date"><time datetime="2019-03-13T09:16:16.000Z" itemprop="datePublished">2019-03-13</time></p>
                         </div>
                     </li>
@@ -670,7 +603,7 @@ ga('send', 'pageview');
     var gitalk = new Gitalk({
         clientID: 'b2a592a5d7353aad4574',
         clientSecret: '8bc3c82a7a51beb8aaf5a6fa2fcbddbf76f892ad',
-        id: 'c2cb269897e21535ed7702599f860525',
+        id: '8efb515b8c5cc11bf8fb8bfefa9d86c1',
         repo: 'linh47.github.io',
         owner: 'linh47',
         admin: "linh47"
